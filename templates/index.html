@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Home </title>
+        <link rel="stylesheet" type="text/css" href={{url_for('static', filename='index.css')}}>  
+   </head>
+
+    <body>
+        
+        <div class="stars">
+        <div class="twinkling">
+            <div id = "container">
+                {% if data is none%}
+                <h1> Generate a Persona </h1>
+                {% endif %}
+                <form action="/" method="POST">
+                    <input class="txtInput" id="gender" type="text" placeholder="Enter "/>
+                    <input class="txtInput" name="username" type="text" placeholder="Enter Name"/>
+                <button class="txtInput" type="submit">Submit</button>
+                </form>
+                {%if data%} 
+                <div id="avatarInfo">
+                    <img src={{filename}}   alt="404"
+                        style="background:1px solid black; width: 100px; height: 50px;"/>   
+                     
+                    <div class="element">
+                            <b>From:</b>
+                            {{data['location']['city']}},{{data['location']['country']}}
+                    </div>
+                
+                     <div class="element">
+                             <b>Username:</b>
+                            {{data['login']['username']}}
+                     </div>
+                
+                     <div class="element">
+                             <b>Password:</b>
+                            {{data['login']['password']}}
+                    </div>
+                </div>
+                {% endif %}
+              </div>  
+        </div>
+        </div>
+ 
+        
+        
+    </body>
+
+</html>
