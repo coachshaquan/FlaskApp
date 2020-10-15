@@ -8,8 +8,7 @@ app = Flask(__name__)
 @app.route('/', methods=["GET","POST"])
 def makeAvatar():
     if request.method =="POST":
-        print(request.form.get("username"))
-        gender ="male"
+        gender =request.form.get("gender")
         name =request.form.get("username")
         filename ="https://avatars.dicebear.com/api/" + \
              gender +"/"+ name + ".svg"
@@ -20,7 +19,6 @@ def makeAvatar():
     elif request.method =="GET":
         data = None;
         filename = None;
-    #print(response["results"])
   
     return render_template("index.html",
                            data = data,

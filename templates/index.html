@@ -14,8 +14,14 @@
                 <h1> Generate a Persona </h1>
                 {% endif %}
                 <form action="/" method="POST">
-                    <input class="txtInput" id="gender" type="text" placeholder="Enter "/>
+                 <div class="txtInput">   
+                    Identify Yourself!
+                    <input type="radio" name="gender" value="male" checked> Boy </input>
+                    <input type="radio" name="gender" value="female"> Girl </input>
+                    <input type="radio" name="gender" value="human"> Pizza </input>
+                    <input type="radio" name="gender" value="bottts"> Plutonian </input>
                     <input class="txtInput" name="username" type="text" placeholder="Enter Name"/>
+                </div>
                 <button class="txtInput" type="submit">Submit</button>
                 </form>
                 {%if data%} 

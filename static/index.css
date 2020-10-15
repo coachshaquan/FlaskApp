@@ -7,7 +7,9 @@ body{
 .txtInput{
     display:block;
     margin:auto;
-     width:35%; 
+    overflow: visible;
+    white-space:nowrap;
+    text-align:center;
 }
 
 input{
